@@ -1,16 +1,32 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local"
 import "./globals.css";
+import Header from "../components/layout/header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const Sageffine = localFont({
+  src: [
+    {
+      path: "../assets/fonts/sageffine-cdnfonts/Sageffine-BF654db192d17bd.otf",
+      weight: "400",
+      style: "normal"
+    }
+  ],
+  variable: "--font-sageffine",
+  display: "swap"
+})
+
+const Akkurat = localFont({
+  src: [
+    {
+      path: "../assets/fonts/AkkuratPro/Akkurat Pro.ttf",
+      weight: "400",
+      style: "regular"
+    }
+  ],
+  variable: "--font-akkurat",
+  display: "swap"
+})
 
 export const metadata: Metadata = {
   title: "Despi: Destiny Control",
@@ -23,11 +39,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${Akkurat.variable} ${Sageffine.variable} antialiased`}
       >
-        {children}
+        <Header/>
+        <main className="pt-20">{children}</main>
       </body>
     </html>
   );

@@ -1,65 +1,112 @@
 import Image from "next/image";
+import { Button } from "../components/ui/button";
+import { HandControl, HandSpirit, MoonCouple } from "../assets/icon";
+
+const FEATURES_LIST = [
+  {
+    id: "wit-1",
+    src: "/wit-1.svg",
+    description:
+      "Deep symbolic interpretation of the major and minor arcana through neural archetypal analysis.",
+  },
+  {
+    id: "wit-2",
+    src: "/wit-2.svg",
+    description:
+      "Precise celestial mapping based on your exact birth moment, calculated via planetary ephemeris.",
+  },
+  {
+    id: "wit-3",
+    src: "/wit-3.svg",
+    description:
+      "Ancient Eastern wisdom met with modern neural processing to reveal your fundamental elements.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div>
+      <section id="hero" className="flex justify-center">
+        <div className="w-[min(1100px,90vw)] flex flex-col items-center mt-10">
+          <h1 className="text-[clamp(25px,5vw,50px)] font-bold">Despi.</h1>
+          <p className="text-[clamp(20px,5vw,25px)] font-sageffine">
+            Destiny is not written. It is interpreted.
+          </p>
+          <Button
+            title="Discover your destiny"
+            variant="dark"
+            className="mt-5"
+          />
+
+          <div className="mt-7">
+            <HandControl />
+          </div>
+        </div>
+      </section>
+      <section id="decode-the-university" className="">
+        <div className="flex flex-col justify-center px-50 bg-foreground min-h-[70vh] text-white">
+          <h2 className="font-bold text-center text-[clamp(10px,5vw,15px)] w-full uppercase mb-10">
+            Decode the Universiry
+          </h2>
+          <div className="grid xl:grid-cols-3 gap-20 mt-10">
+            {FEATURES_LIST.map((item) => (
+              <div key={item.id} className="flex flex-col items-center group">
+                <div className="group-hover:animate-plink">
+                  <Image src={item.src} width={70} height={50} alt={item.src} />
+                </div>
+                <p className="text-center text-[clamp(10px,5vw,15px)] mt-5 font-bold">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section id="ai-spiritual-profile">
+        <div className="grid grid-cols-2 min-h-[80vh]">
+          <div className="p-30">
+            <h2 className="text-[clamp(20px,5vw,30px)] font-bold">
+              Your AI Spiritual Profile
+            </h2>
+            <p className="text-[clamp(10px,5vw,15px)] mt-5 text-justify">
+              {` Despi doesn't just read charts; it constructs a living **Destiny
+              Map**. By synthesizing billions of data points from global
+              esoteric traditions—Tarot, Astrology, I-Ching, and Numerology—our
+              AI creates a dynamic spiritual profile that evolves with you.`}
+            </p>
+            <div className="grid grid-cols-2 gap-10 mt-5">
+              <div className="flex gap-3">
+                <HandSpirit width="30px" height="30px" />
+                <div>
+                  <strong className="uppercase text-[15px]">
+                    neural synastry
+                  </strong>
+                  <p>Mapping energetic alignment with others.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <MoonCouple width="30px" height="30px" />
+                <div>
+                  <strong className="uppercase text-[15px]">
+                    esoteric data
+                  </strong>
+                  <p>Synthesized insights from global traditions.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div></div>
+        </div>
+      </section>
+      <section id="compatibility-engine">
+        <div className="bg-gray-100 min-h-[70vh] flex flex-col items-center">
+          <h2 className="font-bold text-[clamp(25px,5vw,35px)] mt-20">Compatibility Engine</h2>
+          <p className="mt-10 text-[clamp(10px,5vw,15px)]">
+            Beyond sun signs. Our engine compares the core energetic frequencies
+            of two individuals across 12 dimensions of synastry.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
     </div>
   );
 }
