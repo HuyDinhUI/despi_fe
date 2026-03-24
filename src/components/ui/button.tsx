@@ -20,7 +20,7 @@ const variantClass: Record<ButtonVariant, string> = {
     danger: 'bg-red-500 hover:bg-red-600 text-white',
     dark: 'bg-black hover:bg-black/80 text-white dark:bg-gray-200 dark:text-black dark:hover:bg-white',
     outline: 'ring ring-gray-200 dark:ring-gray-500 hover:bg-white/10',
-    icon: 'hover:bg-gray-600/10',
+    icon: 'hover:bg-gray-600/10 rounded-full',
     transparent: 'bg-transparent',
     item: 'bg-transparent dark:text-gray-300'
 };

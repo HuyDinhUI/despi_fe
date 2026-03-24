@@ -1,18 +1,14 @@
 "use client"
 
+import { Card as CardType } from "@/src/@types/card";
 import Image from "next/image";
-
-export type Card = {
-  id: string;
-  front: string;
-};
 
 export type CardDraggableProps = {
   id: string;
   front: string;
   isPlaced: boolean;
   index: number;
-  data: Card;
+  data: CardType;
 };
 
 export type CardProps = {
@@ -24,7 +20,7 @@ export type CardProps = {
 export const Card = ({ front, classmame, flip }: CardProps) => {
   return (
     <div
-      className={`absolute w-25 h-45 perspective-distant ${classmame}`}
+      className={`absolute w-30 h-50 perspective-distant ${classmame}`}
     >
       <div className={`relative w-full h-full transform-3d transition-transform duration-500 ${flip ? 'animate-flip' : 'animate-shuffle'}`}>
         <div
