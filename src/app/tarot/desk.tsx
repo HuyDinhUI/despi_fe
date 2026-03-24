@@ -1,7 +1,7 @@
 "use client";
 
-import { CardDraggable } from "@/src/components/dnd-card/CardDraggable";
-import { CardDroppable } from "@/src/components/dnd-card/CardDroppable";
+import { CardDraggable } from "@/src/components/dnd-card/cardDraggable";
+import { CardDroppable } from "@/src/components/dnd-card/cardDroppable";
 import InputQuestionTarot from "@/src/components/input-question-tarot";
 import { mockDataCard } from "@/src/mock/cardPhotos.mock";
 import {

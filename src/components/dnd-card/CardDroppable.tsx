@@ -2,7 +2,7 @@
 
 import { useDroppable } from "@dnd-kit/core";
 import { Card as CardType } from "@/src/@types/card";
-import { Card } from "./Card";
+import { Card } from "./card";
 
 type CardDroppableProps = {
   id: string;

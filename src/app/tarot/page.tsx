@@ -6,7 +6,7 @@ import { Button } from "@/src/components/ui/button";
 
 export default function TarotPage() {
   return (
-    <>
+    <main>
       <section id="hero" className="flex justify-center">
         <div className="w-[min(1100px,90vw)] flex flex-col items-center mt-10">
           <div className="flex items-center gap-2">
@@ -41,6 +41,6 @@ export default function TarotPage() {
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
 }

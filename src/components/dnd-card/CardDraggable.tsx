@@ -1,9 +1,9 @@
 "use client";
 
 import { useDraggable } from "@dnd-kit/core";
-import { Card, CardDraggableProps } from "./Card";
 import { CSS } from "@dnd-kit/utilities";
 import { useCardStore } from "@/src/stores/tarot.state";
+import { Card, CardDraggableProps } from "./card";
 
 export const CardDraggable = ({
   id,

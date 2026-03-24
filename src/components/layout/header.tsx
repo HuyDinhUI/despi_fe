@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
-import EnergyBar from "../energy-bar/EnergyBar";
 import Avatar from "../ui/avatar";
 
 const NAVBAR_ITEMS = [
@@ -34,7 +33,7 @@ const NAVBAR_ITEMS = [
 const Header = () => {
   const path = usePathname();
   return (
-    <header className="fixed z-999 top-0 w-full py-3 px-5 flex justify-between items-center text-gray-700 border-b border-gray-200 bg-white">
+    <header className="sticky z-999 top-0 w-full py-3 px-5 flex justify-between items-center text-gray-700 border-b border-gray-200 bg-white">
       <div className="relative z-2 font-bold text-[clamp(15px,5vw,25px)] font-sageffine flex gap-1 items-center">
         <Image src="/logo_despi.png" width={35} height={30} alt="logo despi"/>
         Despi
@@ -57,7 +56,6 @@ const Header = () => {
           <Button icon={<Bell size={20}/>} variant="icon" size="ic" />
           <Button icon={<Settings size={20}/>} variant="icon" size="ic" />
           <Button icon={<Sun size={20}/>} variant="icon" size="ic" />
-          <EnergyBar energy={80}/>
           <Avatar src="/Gemini_Generated_Image_3bk1a73bk1a73bk1-removebg-preview.png" width={25} height={25} alt="avatar"/>
       </div>
     </header>
